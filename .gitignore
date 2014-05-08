@@ -1,0 +1,6 @@
+dq-client.jar
+build/org/*
+*.conf
+*.log
+.DS_Store
+*.orig
