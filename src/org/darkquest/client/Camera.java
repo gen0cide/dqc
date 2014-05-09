@@ -1074,419 +1074,525 @@ public class Camera {
     }
   }
 
-  private void method282(int i, int j, int k, int ai[], int ai1[], int ai2[],
-                         int l, Model model) {
-    if (l == -2)
+  private int m282_i1;
+  private int m282_k1;
+  private int m282_j2;
+  private int m282_i3;
+  private int m282_k3;
+  private int m282_i4;
+  private int m282_i6;
+  private int m282_j7;
+  private int m282_k8;
+  private int m282_l9;
+  private int m282_k10;
+  private int m282_i11;
+  private int m282_k11;
+  private int m282_i12;
+  private int m282_k12;
+  private int m282_i13;
+  private int m282_k13;
+  private int m282_i14;
+  private int m282_k14;
+  private int m282_i15;
+  private int m282_k15;
+  private int m282_i16;
+  private int m282_k16;
+  private int m282_i17;
+  private int m282_byte1;
+  private CameraVariables m282_cameraVariables_3;
+  private int m282_k17;
+  private int m282_k20;
+  private int m282_i22;
+  private int m282_k23;
+  private int m282_l17;
+  private CameraVariables m282_cameraVariables_4;
+  private int m282_i18;
+  private int m282_l20;
+  private int m282_j22;
+  private int m282_l23;
+  private int m282_j18;
+  private CameraVariables m282_cameraVariables_5;
+  private int m282_k18;
+  private int m282_i21;
+  private int m282_k22;
+  private int m282_i24;
+  private int m282_l18;
+  private int m282_i10;
+  private int m282_l10;
+  private int m282_j11;
+  private int m282_l11;
+  private int m282_j12;
+  private int m282_l12;
+  private int m282_j13;
+  private int m282_l13;
+  private int m282_j14;
+  private int m282_l14;
+  private int m282_j15;
+  private int m282_l15;
+  private int m282_j16;
+  private int m282_l16;
+  private int m282_j17;
+  private byte m282_byte2;
+  private CameraVariables m282_cameraVariables_6;
+  private int m282_i19;
+  private int m282_j21;
+  private int m282_l22;
+  private int m282_j24;
+  private int m282_j19;
+  private CameraVariables m282_cameraVariables_7;
+  private int m282_k19;
+  private int m282_k21;
+  private int m282_i23;
+  private int m282_k24;
+  private int m282_l19;
+  private CameraVariables m282_cameraVariables_8;
+  private int m282_i20;
+  private int m282_l21;
+  private int m282_j23;
+  private int m282_l24;
+  private int m282_j20;
+  private int m282_j1;
+  private int m282_l1;
+  private int m282_k2;
+  private int m282_j3;
+  private int m282_l3;
+  private int m282_j4;
+  private int m282_j6;
+  private int m282_k7;
+  private int m282_l8;
+  private int m282_j10;
+  private int m282_i2;
+  private int m282_l2;
+  private byte m282_byte0;
+  private CameraVariables m282_cameraVariables;
+  private int m282_k4;
+  private int m282_k6;
+  private int m282_l7;
+  private int m282_i9;
+  private int m282_l4;
+  private CameraVariables m282_cameraVariables_1;
+  private int m282_i5;
+  private int m282_l6;
+  private int m282_i8;
+  private int m282_j9;
+  private int m282_j5;
+  private CameraVariables m282_cameraVariables_2;
+  private int m282_k5;
+  private int m282_i7;
+  private int m282_j8;
+  private int m282_k9;
+  private int m282_l5;
+
+  private void method282(int mv_a, int mv_b, int mv_c, int mv_d[], int mv_e[], int mv_f[],
+                         int mv_g, Model mv_hm) {
+    if (mv_g == -2)
       return;
-    if (l >= 0) {
-      if (l >= anInt424)
-        l = 0;
-      method299(l);
-      int i1 = ai[0];
-      int k1 = ai1[0];
-      int j2 = ai2[0];
-      int i3 = i1 - ai[1];
-      int k3 = k1 - ai1[1];
-      int i4 = j2 - ai2[1];
-      k--;
-      int i6 = ai[k] - i1;
-      int j7 = ai1[k] - k1;
-      int k8 = ai2[k] - j2;
-      if (anIntArray427[l] == 1) {
-        int l9 = i6 * k1 - j7 * i1 << 12;
-        int k10 = j7 * j2 - k8 * k1 << (5 - cameraSizeInt) + 7 + 4;
-        int i11 = k8 * i1 - i6 * j2 << (5 - cameraSizeInt) + 7;
-        int k11 = i3 * k1 - k3 * i1 << 12;
-        int i12 = k3 * j2 - i4 * k1 << (5 - cameraSizeInt) + 7 + 4;
-        int k12 = i4 * i1 - i3 * j2 << (5 - cameraSizeInt) + 7;
-        int i13 = k3 * i6 - i3 * j7 << 5;
-        int k13 = i4 * j7 - k3 * k8 << (5 - cameraSizeInt) + 4;
-        int i14 = i3 * k8 - i4 * i6 >> cameraSizeInt - 5;
-        int k14 = k10 >> 4;
-        int i15 = i12 >> 4;
-        int k15 = k13 >> 4;
-        int i16 = modelLeftY - halfHeight2;
-        int k16 = width;
-        int i17 = halfWidth2 + modelLeftY * k16;
-        byte byte1 = 1;
-        l9 += i11 * i16;
-        k11 += k12 * i16;
-        i13 += i14 * i16;
+    if (mv_g >= 0) {
+      if (mv_g >= anInt424)
+        mv_g = 0;
+      method299(mv_g);
+      m282_i1 = mv_d[0];
+      m282_k1 = mv_e[0];
+      m282_j2 = mv_f[0];
+      m282_i3 = m282_i1 - mv_d[1];
+      m282_k3 = m282_k1 - mv_e[1];
+      m282_i4 = m282_j2 - mv_f[1];
+      mv_c--;
+      m282_i6 = mv_d[mv_c] - m282_i1;
+      m282_j7 = mv_e[mv_c] - m282_k1;
+      m282_k8 = mv_f[mv_c] - m282_j2;
+      if (anIntArray427[mv_g] == 1) {
+        m282_l9 = m282_i6 * m282_k1 - m282_j7 * m282_i1 << 12;
+        m282_k10 = m282_j7 * m282_j2 - m282_k8 * m282_k1 << (5 - cameraSizeInt) + 7 + 4;
+        m282_i11 = m282_k8 * m282_i1 - m282_i6 * m282_j2 << (5 - cameraSizeInt) + 7;
+        m282_k11 = m282_i3 * m282_k1 - m282_k3 * m282_i1 << 12;
+        m282_i12 = m282_k3 * m282_j2 - m282_i4 * m282_k1 << (5 - cameraSizeInt) + 7 + 4;
+        m282_k12 = m282_i4 * m282_i1 - m282_i3 * m282_j2 << (5 - cameraSizeInt) + 7;
+        m282_i13 = m282_k3 * m282_i6 - m282_i3 * m282_j7 << 5;
+        m282_k13 = m282_i4 * m282_j7 - m282_k3 * m282_k8 << (5 - cameraSizeInt) + 4;
+        m282_i14 = m282_i3 * m282_k8 - m282_i4 * m282_i6 >> cameraSizeInt - 5;
+        m282_k14 = m282_k10 >> 4;
+        m282_i15 = m282_i12 >> 4;
+        m282_k15 = m282_k13 >> 4;
+        m282_i16 = modelLeftY - halfHeight2;
+        m282_k16 = width;
+        m282_i17 = halfWidth2 + modelLeftY * m282_k16;
+        m282_byte1 = 1;
+        m282_l9 += m282_i11 * m282_i16;
+        m282_k11 += m282_k12 * m282_i16;
+        m282_i13 += m282_i14 * m282_i16;
         if (f1Toggle) {
           if ((modelLeftY & 1) == 1) {
             modelLeftY++;
-            l9 += i11;
-            k11 += k12;
-            i13 += i14;
-            i17 += k16;
+            m282_l9 += m282_i11;
+            m282_k11 += m282_k12;
+            m282_i13 += m282_i14;
+            m282_i17 += m282_k16;
           }
-          i11 <<= 1;
-          k12 <<= 1;
-          i14 <<= 1;
-          k16 <<= 1;
-          byte1 = 2;
+          m282_i11 <<= 1;
+          m282_k12 <<= 1;
+          m282_i14 <<= 1;
+          m282_k16 <<= 1;
+          m282_byte1 = 2;
         }
-        if (model.aBoolean255) {
-          for (i = modelLeftY; i < modelRightY; i += byte1) {
-            CameraVariables cameraVariables_3 = cameraVariables[i];
-            j = cameraVariables_3.leftX >> 8;
-            int k17 = cameraVariables_3.rightX >> 8;
-            int k20 = k17 - j;
-            if (k20 <= 0) {
-              l9 += i11;
-              k11 += k12;
-              i13 += i14;
-              i17 += k16;
+        if (mv_hm.aBoolean255) {
+          for (mv_a = modelLeftY; mv_a < modelRightY; mv_a += m282_byte1) {
+            m282_cameraVariables_3 = cameraVariables[mv_a];
+            mv_b = m282_cameraVariables_3.leftX >> 8;
+            m282_k17 = m282_cameraVariables_3.rightX >> 8;
+            m282_k20 = m282_k17 - mv_b;
+            if (m282_k20 <= 0) {
+              m282_l9 += m282_i11;
+              m282_k11 += m282_k12;
+              m282_i13 += m282_i14;
+              m282_i17 += m282_k16;
             } else {
-              int i22 = cameraVariables_3.anInt372;
-              int k23 = (cameraVariables_3.anInt373 - i22) / k20;
-              if (j < -halfWidth) {
-                i22 += (-halfWidth - j) * k23;
-                j = -halfWidth;
-                k20 = k17 - j;
+              m282_i22 = m282_cameraVariables_3.anInt372;
+              m282_k23 = (m282_cameraVariables_3.anInt373 - m282_i22) / m282_k20;
+              if (mv_b < -halfWidth) {
+                m282_i22 += (-halfWidth - mv_b) * m282_k23;
+                mv_b = -halfWidth;
+                m282_k20 = m282_k17 - mv_b;
               }
-              if (k17 > halfWidth) {
-                int l17 = halfWidth;
-                k20 = l17 - j;
+              if (m282_k17 > halfWidth) {
+                m282_l17 = halfWidth;
+                m282_k20 = m282_l17 - mv_b;
               }
-              method284(anIntArray437, anIntArrayArray429[l], 0,
-                        0, l9 + k14 * j, k11 + i15 * j, i13 + k15
-                        * j, k10, i12, k13, k20, i17 + j,
-                        i22, k23 << 2);
-              l9 += i11;
-              k11 += k12;
-              i13 += i14;
-              i17 += k16;
+              method284(anIntArray437, anIntArrayArray429[mv_g], 0,
+                        0, m282_l9 + m282_k14 * mv_b, m282_k11 + m282_i15 * mv_b, m282_i13 + m282_k15
+                        * mv_b, m282_k10, m282_i12, m282_k13, m282_k20, m282_i17 + mv_b,
+                        m282_i22, m282_k23 << 2);
+              m282_l9 += m282_i11;
+              m282_k11 += m282_k12;
+              m282_i13 += m282_i14;
+              m282_i17 += m282_k16;
             }
           }
 
           return;
         }
-        if (!aBooleanArray430[l]) {
-          for (i = modelLeftY; i < modelRightY; i += byte1) {
-            CameraVariables cameraVariables_4 = cameraVariables[i];
-            j = cameraVariables_4.leftX >> 8;
-            int i18 = cameraVariables_4.rightX >> 8;
-            int l20 = i18 - j;
-            if (l20 <= 0) {
-              l9 += i11;
-              k11 += k12;
-              i13 += i14;
-              i17 += k16;
+        if (!aBooleanArray430[mv_g]) {
+          for (mv_a = modelLeftY; mv_a < modelRightY; mv_a += m282_byte1) {
+            m282_cameraVariables_4 = cameraVariables[mv_a];
+            mv_b = m282_cameraVariables_4.leftX >> 8;
+            m282_i18 = m282_cameraVariables_4.rightX >> 8;
+            m282_l20 = m282_i18 - mv_b;
+            if (m282_l20 <= 0) {
+              m282_l9 += m282_i11;
+              m282_k11 += m282_k12;
+              m282_i13 += m282_i14;
+              m282_i17 += m282_k16;
             } else {
-              int j22 = cameraVariables_4.anInt372;
-              int l23 = (cameraVariables_4.anInt373 - j22) / l20;
-              if (j < -halfWidth) {
-                j22 += (-halfWidth - j) * l23;
-                j = -halfWidth;
-                l20 = i18 - j;
+              m282_j22 = m282_cameraVariables_4.anInt372;
+              m282_l23 = (m282_cameraVariables_4.anInt373 - m282_j22) / m282_l20;
+              if (mv_b < -halfWidth) {
+                m282_j22 += (-halfWidth - mv_b) * m282_l23;
+                mv_b = -halfWidth;
+                m282_l20 = m282_i18 - mv_b;
               }
-              if (i18 > halfWidth) {
-                int j18 = halfWidth;
-                l20 = j18 - j;
+              if (m282_i18 > halfWidth) {
+                m282_j18 = halfWidth;
+                m282_l20 = m282_j18 - mv_b;
               }
-              method283(anIntArray437, anIntArrayArray429[l], 0,
-                        0, l9 + k14 * j, k11 + i15 * j, i13 + k15
-                        * j, k10, i12, k13, l20, i17 + j,
-                        j22, l23 << 2);
-              l9 += i11;
-              k11 += k12;
-              i13 += i14;
-              i17 += k16;
+              method283(anIntArray437, anIntArrayArray429[mv_g], 0,
+                        0, m282_l9 + m282_k14 * mv_b, m282_k11 + m282_i15 * mv_b, m282_i13 + m282_k15
+                        * mv_b, m282_k10, m282_i12, m282_k13, m282_l20, m282_i17 + mv_b,
+                        m282_j22, m282_l23 << 2);
+              m282_l9 += m282_i11;
+              m282_k11 += m282_k12;
+              m282_i13 += m282_i14;
+              m282_i17 += m282_k16;
             }
           }
 
           return;
         }
-        for (i = modelLeftY; i < modelRightY; i += byte1) {
-          CameraVariables cameraVariables_5 = cameraVariables[i];
-          j = cameraVariables_5.leftX >> 8;
-          int k18 = cameraVariables_5.rightX >> 8;
-          int i21 = k18 - j;
-          if (i21 <= 0) {
-            l9 += i11;
-            k11 += k12;
-            i13 += i14;
-            i17 += k16;
+        for (mv_a = modelLeftY; mv_a < modelRightY; mv_a += m282_byte1) {
+          m282_cameraVariables_5 = cameraVariables[mv_a];
+          mv_b = m282_cameraVariables_5.leftX >> 8;
+          m282_k18 = m282_cameraVariables_5.rightX >> 8;
+          m282_i21 = m282_k18 - mv_b;
+          if (m282_i21 <= 0) {
+            m282_l9 += m282_i11;
+            m282_k11 += m282_k12;
+            m282_i13 += m282_i14;
+            m282_i17 += m282_k16;
           } else {
-            int k22 = cameraVariables_5.anInt372;
-            int i24 = (cameraVariables_5.anInt373 - k22) / i21;
-            if (j < -halfWidth) {
-              k22 += (-halfWidth - j) * i24;
-              j = -halfWidth;
-              i21 = k18 - j;
+            m282_k22 = m282_cameraVariables_5.anInt372;
+            m282_i24 = (m282_cameraVariables_5.anInt373 - m282_k22) / m282_i21;
+            if (mv_b < -halfWidth) {
+              m282_k22 += (-halfWidth - mv_b) * m282_i24;
+              mv_b = -halfWidth;
+              m282_i21 = m282_k18 - mv_b;
             }
-            if (k18 > halfWidth) {
-              int l18 = halfWidth;
-              i21 = l18 - j;
+            if (m282_k18 > halfWidth) {
+              m282_l18 = halfWidth;
+              m282_i21 = m282_l18 - mv_b;
             }
             method285(anIntArray437, 0, 0, 0,
-                      anIntArrayArray429[l], l9 + k14 * j, k11 + i15
-                      * j, i13 + k15 * j, k10, i12, k13, i21,
-                      i17 + j, k22, i24);
-            l9 += i11;
-            k11 += k12;
-            i13 += i14;
-            i17 += k16;
+                      anIntArrayArray429[mv_g], m282_l9 + m282_k14 * mv_b, m282_k11 + m282_i15
+                      * mv_b, m282_i13 + m282_k15 * mv_b, m282_k10, m282_i12, m282_k13, m282_i21,
+                      m282_i17 + mv_b, m282_k22, m282_i24);
+            m282_l9 += m282_i11;
+            m282_k11 += m282_k12;
+            m282_i13 += m282_i14;
+            m282_i17 += m282_k16;
           }
         }
 
         return;
       }
-      int i10 = i6 * k1 - j7 * i1 << 11;
-      int l10 = j7 * j2 - k8 * k1 << (5 - cameraSizeInt) + 6 + 4;
-      int j11 = k8 * i1 - i6 * j2 << (5 - cameraSizeInt) + 6;
-      int l11 = i3 * k1 - k3 * i1 << 11;
-      int j12 = k3 * j2 - i4 * k1 << (5 - cameraSizeInt) + 6 + 4;
-      int l12 = i4 * i1 - i3 * j2 << (5 - cameraSizeInt) + 6;
-      int j13 = k3 * i6 - i3 * j7 << 5;
-      int l13 = i4 * j7 - k3 * k8 << (5 - cameraSizeInt) + 4;
-      int j14 = i3 * k8 - i4 * i6 >> cameraSizeInt - 5;
-      int l14 = l10 >> 4;
-      int j15 = j12 >> 4;
-      int l15 = l13 >> 4;
-      int j16 = modelLeftY - halfHeight2;
-      int l16 = width;
-      int j17 = halfWidth2 + modelLeftY * l16;
-      byte byte2 = 1;
-      i10 += j11 * j16;
-      l11 += l12 * j16;
-      j13 += j14 * j16;
+      m282_i10 = m282_i6 * m282_k1 - m282_j7 * m282_i1 << 11;
+      m282_l10 = m282_j7 * m282_j2 - m282_k8 * m282_k1 << (5 - cameraSizeInt) + 6 + 4;
+      m282_j11 = m282_k8 * m282_i1 - m282_i6 * m282_j2 << (5 - cameraSizeInt) + 6;
+      m282_l11 = m282_i3 * m282_k1 - m282_k3 * m282_i1 << 11;
+      m282_j12 = m282_k3 * m282_j2 - m282_i4 * m282_k1 << (5 - cameraSizeInt) + 6 + 4;
+      m282_l12 = m282_i4 * m282_i1 - m282_i3 * m282_j2 << (5 - cameraSizeInt) + 6;
+      m282_j13 = m282_k3 * m282_i6 - m282_i3 * m282_j7 << 5;
+      m282_l13 = m282_i4 * m282_j7 - m282_k3 * m282_k8 << (5 - cameraSizeInt) + 4;
+      m282_j14 = m282_i3 * m282_k8 - m282_i4 * m282_i6 >> cameraSizeInt - 5;
+      m282_l14 = m282_l10 >> 4;
+      m282_j15 = m282_j12 >> 4;
+      m282_l15 = m282_l13 >> 4;
+      m282_j16 = modelLeftY - halfHeight2;
+      m282_l16 = width;
+      m282_j17 = halfWidth2 + modelLeftY * m282_l16;
+      m282_byte2 = 1;
+      m282_i10 += m282_j11 * m282_j16;
+      m282_l11 += m282_l12 * m282_j16;
+      m282_j13 += m282_j14 * m282_j16;
       if (f1Toggle) {
         if ((modelLeftY & 1) == 1) {
           modelLeftY++;
-          i10 += j11;
-          l11 += l12;
-          j13 += j14;
-          j17 += l16;
+          m282_i10 += m282_j11;
+          m282_l11 += m282_l12;
+          m282_j13 += m282_j14;
+          m282_j17 += m282_l16;
         }
-        j11 <<= 1;
-        l12 <<= 1;
-        j14 <<= 1;
-        l16 <<= 1;
-        byte2 = 2;
+        m282_j11 <<= 1;
+        m282_l12 <<= 1;
+        m282_j14 <<= 1;
+        m282_l16 <<= 1;
+        m282_byte2 = 2;
       }
-      if (model.aBoolean255) {
-        for (i = modelLeftY; i < modelRightY; i += byte2) {
-          CameraVariables cameraVariables_6 = cameraVariables[i];
-          j = cameraVariables_6.leftX >> 8;
-          int i19 = cameraVariables_6.rightX >> 8;
-          int j21 = i19 - j;
-          if (j21 <= 0) {
-            i10 += j11;
-            l11 += l12;
-            j13 += j14;
-            j17 += l16;
+      if (mv_hm.aBoolean255) {
+        for (mv_a = modelLeftY; mv_a < modelRightY; mv_a += m282_byte2) {
+          m282_cameraVariables_6 = cameraVariables[mv_a];
+          mv_b = m282_cameraVariables_6.leftX >> 8;
+          m282_i19 = m282_cameraVariables_6.rightX >> 8;
+          m282_j21 = m282_i19 - mv_b;
+          if (m282_j21 <= 0) {
+            m282_i10 += m282_j11;
+            m282_l11 += m282_l12;
+            m282_j13 += m282_j14;
+            m282_j17 += m282_l16;
           } else {
-            int l22 = cameraVariables_6.anInt372;
-            int j24 = (cameraVariables_6.anInt373 - l22) / j21;
-            if (j < -halfWidth) {
-              l22 += (-halfWidth - j) * j24;
-              j = -halfWidth;
-              j21 = i19 - j;
+            m282_l22 = m282_cameraVariables_6.anInt372;
+            m282_j24 = (m282_cameraVariables_6.anInt373 - m282_l22) / m282_j21;
+            if (mv_b < -halfWidth) {
+              m282_l22 += (-halfWidth - mv_b) * m282_j24;
+              mv_b = -halfWidth;
+              m282_j21 = m282_i19 - mv_b;
             }
-            if (i19 > halfWidth) {
-              int j19 = halfWidth;
-              j21 = j19 - j;
+            if (m282_i19 > halfWidth) {
+              m282_j19 = halfWidth;
+              m282_j21 = m282_j19 - mv_b;
             }
-            method287(anIntArray437, anIntArrayArray429[l], 0, 0,
-                      i10 + l14 * j, l11 + j15 * j, j13 + l15 * j,
-                      l10, j12, l13, j21, j17 + j, l22, j24);
-            i10 += j11;
-            l11 += l12;
-            j13 += j14;
-            j17 += l16;
+            method287(anIntArray437, anIntArrayArray429[mv_g], 0, 0,
+                      m282_i10 + m282_l14 * mv_b, m282_l11 + m282_j15 * mv_b, m282_j13 + m282_l15 * mv_b,
+                      m282_l10, m282_j12, m282_l13, m282_j21, m282_j17 + mv_b, m282_l22, m282_j24);
+            m282_i10 += m282_j11;
+            m282_l11 += m282_l12;
+            m282_j13 += m282_j14;
+            m282_j17 += m282_l16;
           }
         }
 
         return;
       }
-      if (!aBooleanArray430[l]) {
-        for (i = modelLeftY; i < modelRightY; i += byte2) {
-          CameraVariables cameraVariables_7 = cameraVariables[i];
-          j = cameraVariables_7.leftX >> 8;
-          int k19 = cameraVariables_7.rightX >> 8;
-          int k21 = k19 - j;
-          if (k21 <= 0) {
-            i10 += j11;
-            l11 += l12;
-            j13 += j14;
-            j17 += l16;
+      if (!aBooleanArray430[mv_g]) {
+        for (mv_a = modelLeftY; mv_a < modelRightY; mv_a += m282_byte2) {
+          m282_cameraVariables_7 = cameraVariables[mv_a];
+          mv_b = m282_cameraVariables_7.leftX >> 8;
+          m282_k19 = m282_cameraVariables_7.rightX >> 8;
+          m282_k21 = m282_k19 - mv_b;
+          if (m282_k21 <= 0) {
+            m282_i10 += m282_j11;
+            m282_l11 += m282_l12;
+            m282_j13 += m282_j14;
+            m282_j17 += m282_l16;
           } else {
-            int i23 = cameraVariables_7.anInt372;
-            int k24 = (cameraVariables_7.anInt373 - i23) / k21;
-            if (j < -halfWidth) {
-              i23 += (-halfWidth - j) * k24;
-              j = -halfWidth;
-              k21 = k19 - j;
+            m282_i23 = m282_cameraVariables_7.anInt372;
+            m282_k24 = (m282_cameraVariables_7.anInt373 - m282_i23) / m282_k21;
+            if (mv_b < -halfWidth) {
+              m282_i23 += (-halfWidth - mv_b) * m282_k24;
+              mv_b = -halfWidth;
+              m282_k21 = m282_k19 - mv_b;
             }
-            if (k19 > halfWidth) {
-              int l19 = halfWidth;
-              k21 = l19 - j;
+            if (m282_k19 > halfWidth) {
+              m282_l19 = halfWidth;
+              m282_k21 = m282_l19 - mv_b;
             }
-            method286(anIntArray437, anIntArrayArray429[l], 0, 0,
-                      i10 + l14 * j, l11 + j15 * j, j13 + l15 * j,
-                      l10, j12, l13, k21, j17 + j, i23, k24);
-            i10 += j11;
-            l11 += l12;
-            j13 += j14;
-            j17 += l16;
+            method286(anIntArray437, anIntArrayArray429[mv_g], 0, 0,
+                      m282_i10 + m282_l14 * mv_b, m282_l11 + m282_j15 * mv_b, m282_j13 + m282_l15 * mv_b,
+                      m282_l10, m282_j12, m282_l13, m282_k21, m282_j17 + mv_b, m282_i23, m282_k24);
+            m282_i10 += m282_j11;
+            m282_l11 += m282_l12;
+            m282_j13 += m282_j14;
+            m282_j17 += m282_l16;
           }
         }
-
         return;
       }
-      for (i = modelLeftY; i < modelRightY; i += byte2) {
-        CameraVariables cameraVariables_8 = cameraVariables[i];
-        j = cameraVariables_8.leftX >> 8;
-        int i20 = cameraVariables_8.rightX >> 8;
-        int l21 = i20 - j;
-        if (l21 <= 0) {
-          i10 += j11;
-          l11 += l12;
-          j13 += j14;
-          j17 += l16;
+      for (mv_a = modelLeftY; mv_a < modelRightY; mv_a += m282_byte2) {
+        m282_cameraVariables_8 = cameraVariables[mv_a];
+        mv_b = m282_cameraVariables_8.leftX >> 8;
+        m282_i20 = m282_cameraVariables_8.rightX >> 8;
+        m282_l21 = m282_i20 - mv_b;
+        if (m282_l21 <= 0) {
+          m282_i10 += m282_j11;
+          m282_l11 += m282_l12;
+          m282_j13 += m282_j14;
+          m282_j17 += m282_l16;
         } else {
-          int j23 = cameraVariables_8.anInt372;
-          int l24 = (cameraVariables_8.anInt373 - j23) / l21;
-          if (j < -halfWidth) {
-            j23 += (-halfWidth - j) * l24;
-            j = -halfWidth;
-            l21 = i20 - j;
+          m282_j23 = m282_cameraVariables_8.anInt372;
+          m282_l24 = (m282_cameraVariables_8.anInt373 - m282_j23) / m282_l21;
+          if (mv_b < -halfWidth) {
+            m282_j23 += (-halfWidth - mv_b) * m282_l24;
+            mv_b = -halfWidth;
+            m282_l21 = m282_i20 - mv_b;
           }
-          if (i20 > halfWidth) {
-            int j20 = halfWidth;
-            l21 = j20 - j;
+          if (m282_i20 > halfWidth) {
+            m282_j20 = halfWidth;
+            m282_l21 = m282_j20 - mv_b;
           }
-          method288(anIntArray437, 0, 0, 0, anIntArrayArray429[l],
-                    i10 + l14 * j, l11 + j15 * j, j13 + l15 * j, l10,
-                    j12, l13, l21, j17 + j, j23, l24);
-          i10 += j11;
-          l11 += l12;
-          j13 += j14;
-          j17 += l16;
+          method288(anIntArray437, 0, 0, 0, anIntArrayArray429[mv_g],
+                    m282_i10 + m282_l14 * mv_b, m282_l11 + m282_j15 * mv_b, m282_j13 + m282_l15 * mv_b, m282_l10,
+                    m282_j12, m282_l13, m282_l21, m282_j17 + mv_b, m282_j23, m282_l24);
+          m282_i10 += m282_j11;
+          m282_l11 += m282_l12;
+          m282_j13 += m282_j14;
+          m282_j17 += m282_l16;
         }
       }
 
       return;
     }
-    for (int j1 = 0; j1 < anInt374; j1++) {
-      if (anIntArray375[j1] == l) {
-        anIntArray377 = anIntArrayArray376[j1];
+    for (m282_j1 = 0; m282_j1 < anInt374; m282_j1++) {
+      if (anIntArray375[m282_j1] == mv_g) {
+        anIntArray377 = anIntArrayArray376[m282_j1];
         break;
       }
-      if (j1 == anInt374 - 1) {
-        int l1 = (int) (Math.random() * (double) anInt374);
-        anIntArray375[l1] = l;
-        l = -1 - l;
-        int k2 = (l >> 10 & 0x1f) * 8;
-        int j3 = (l >> 5 & 0x1f) * 8;
-        int l3 = (l & 0x1f) * 8;
-        for (int j4 = 0; j4 < 256; j4++) {
-          int j6 = j4 * j4;
-          int k7 = (k2 * j6) / 0x10000;
-          int l8 = (j3 * j6) / 0x10000;
-          int j10 = (l3 * j6) / 0x10000;
-          anIntArrayArray376[l1][255 - j4] = (k7 << 16) + (l8 << 8)
-                                             + j10;
+      if (m282_j1 == anInt374 - 1) {
+        m282_l1 = (int) (Math.random() * (double) anInt374);
+        anIntArray375[m282_l1] = mv_g;
+        mv_g = -1 - mv_g;
+        m282_k2 = (mv_g >> 10 & 0x1f) * 8;
+        m282_j3 = (mv_g >> 5 & 0x1f) * 8;
+        m282_l3 = (mv_g & 0x1f) * 8;
+        for (m282_j4 = 0; m282_j4 < 256; m282_j4++) {
+          m282_j6 = m282_j4 * m282_j4;
+          m282_k7 = (m282_k2 * m282_j6) / 0x10000;
+          m282_l8 = (m282_j3 * m282_j6) / 0x10000;
+          m282_j10 = (m282_l3 * m282_j6) / 0x10000;
+          anIntArrayArray376[m282_l1][255 - m282_j4] = (m282_k7 << 16) + (m282_l8 << 8)
+                                             + m282_j10;
         }
 
-        anIntArray377 = anIntArrayArray376[l1];
+        anIntArray377 = anIntArrayArray376[m282_l1];
       }
     }
 
-    int i2 = width;
-    int l2 = halfWidth2 + modelLeftY * i2;
-    byte byte0 = 1;
+    m282_i2 = width;
+    m282_l2 = halfWidth2 + modelLeftY * m282_i2;
+    m282_byte0 = 1;
     if (f1Toggle) {
       if ((modelLeftY & 1) == 1) {
         modelLeftY++;
-        l2 += i2;
+        m282_l2 += m282_i2;
       }
-      i2 <<= 1;
-      byte0 = 2;
+      m282_i2 <<= 1;
+      m282_byte0 = 2;
     }
-    if (model.isGiantCrystal) {
-      for (i = modelLeftY; i < modelRightY; i += byte0) {
-        CameraVariables cameraVariables = this.cameraVariables[i];
-        j = cameraVariables.leftX >> 8;
-        int k4 = cameraVariables.rightX >> 8;
-        int k6 = k4 - j;
-        if (k6 <= 0) {
-          l2 += i2;
+    if (mv_hm.isGiantCrystal) {
+      for (mv_a = modelLeftY; mv_a < modelRightY; mv_a += m282_byte0) {
+        m282_cameraVariables = this.cameraVariables[mv_a];
+        mv_b = m282_cameraVariables.leftX >> 8;
+        m282_k4 = m282_cameraVariables.rightX >> 8;
+        m282_k6 = m282_k4 - mv_b;
+        if (m282_k6 <= 0) {
+          m282_l2 += m282_i2;
         } else {
-          int l7 = cameraVariables.anInt372;
-          int i9 = (cameraVariables.anInt373 - l7) / k6;
-          if (j < -halfWidth) {
-            l7 += (-halfWidth - j) * i9;
-            j = -halfWidth;
-            k6 = k4 - j;
+          m282_l7 = m282_cameraVariables.anInt372;
+          m282_i9 = (m282_cameraVariables.anInt373 - m282_l7) / m282_k6;
+          if (mv_b < -halfWidth) {
+            m282_l7 += (-halfWidth - mv_b) * m282_i9;
+            mv_b = -halfWidth;
+            m282_k6 = m282_k4 - mv_b;
           }
-          if (k4 > halfWidth) {
-            int l4 = halfWidth;
-            k6 = l4 - j;
+          if (m282_k4 > halfWidth) {
+            m282_l4 = halfWidth;
+            m282_k6 = m282_l4 - mv_b;
           }
-          method290(anIntArray437, -k6, l2 + j, 0, anIntArray377, l7,
-                    i9);
-          l2 += i2;
+          method290(anIntArray437, -m282_k6, m282_l2 + mv_b, 0, anIntArray377, m282_l7,
+                    m282_i9);
+          m282_l2 += m282_i2;
         }
       }
-
       return;
     }
     if (aBoolean386) {
-      for (i = modelLeftY; i < modelRightY; i += byte0) {
-        CameraVariables cameraVariables_1 = cameraVariables[i];
-        j = cameraVariables_1.leftX >> 8;
-        int i5 = cameraVariables_1.rightX >> 8;
-        int l6 = i5 - j;
-        if (l6 <= 0) {
-          l2 += i2;
+      for (mv_a = modelLeftY; mv_a < modelRightY; mv_a += m282_byte0) {
+        m282_cameraVariables_1 = cameraVariables[mv_a];
+        mv_b = m282_cameraVariables_1.leftX >> 8;
+        m282_i5 = m282_cameraVariables_1.rightX >> 8;
+        m282_l6 = m282_i5 - mv_b;
+        if (m282_l6 <= 0) {
+          m282_l2 += m282_i2;
         } else {
-          int i8 = cameraVariables_1.anInt372;
-          int j9 = (cameraVariables_1.anInt373 - i8) / l6;
-          if (j < -halfWidth) {
-            i8 += (-halfWidth - j) * j9;
-            j = -halfWidth;
-            l6 = i5 - j;
+          m282_i8 = m282_cameraVariables_1.anInt372;
+          m282_j9 = (m282_cameraVariables_1.anInt373 - m282_i8) / m282_l6;
+          if (mv_b < -halfWidth) {
+            m282_i8 += (-halfWidth - mv_b) * m282_j9;
+            mv_b = -halfWidth;
+            m282_l6 = m282_i5 - mv_b;
           }
-          if (i5 > halfWidth) {
-            int j5 = halfWidth;
-            l6 = j5 - j;
+          if (m282_i5 > halfWidth) {
+            m282_j5 = halfWidth;
+            m282_l6 = m282_j5 - mv_b;
           }
-          method289(anIntArray437, -l6, l2 + j, 0, anIntArray377, i8,
-                    j9);
-          l2 += i2;
+          method289(anIntArray437, -m282_l6, m282_l2 + mv_b, 0, anIntArray377, m282_i8,
+                    m282_j9);
+          m282_l2 += m282_i2;
         }
       }
-
       return;
     }
-    for (i = modelLeftY; i < modelRightY; i += byte0) {
-      CameraVariables cameraVariables_2 = cameraVariables[i];
-      j = cameraVariables_2.leftX >> 8;
-      int k5 = cameraVariables_2.rightX >> 8;
-      int i7 = k5 - j;
-      if (i7 <= 0) {
-        l2 += i2;
+    for (mv_a = modelLeftY; mv_a < modelRightY; mv_a += m282_byte0) {
+      m282_cameraVariables_2 = cameraVariables[mv_a];
+      mv_b = m282_cameraVariables_2.leftX >> 8;
+      m282_k5 = m282_cameraVariables_2.rightX >> 8;
+      m282_i7 = m282_k5 - mv_b;
+      if (m282_i7 <= 0) {
+        m282_l2 += m282_i2;
       } else {
-        int j8 = cameraVariables_2.anInt372;
-        int k9 = (cameraVariables_2.anInt373 - j8) / i7;
-        if (j < -halfWidth) {
-          j8 += (-halfWidth - j) * k9;
-          j = -halfWidth;
-          i7 = k5 - j;
+        m282_j8 = m282_cameraVariables_2.anInt372;
+        m282_k9 = (m282_cameraVariables_2.anInt373 - m282_j8) / m282_i7;
+        if (mv_b < -halfWidth) {
+          m282_j8 += (-halfWidth - mv_b) * m282_k9;
+          mv_b = -halfWidth;
+          m282_i7 = m282_k5 - mv_b;
         }
-        if (k5 > halfWidth) {
-          int l5 = halfWidth;
-          i7 = l5 - j;
+        if (m282_k5 > halfWidth) {
+          m282_l5 = halfWidth;
+          m282_i7 = m282_l5 - mv_b;
         }
-        method291(anIntArray437, -i7, l2 + j, 0, anIntArray377, j8, k9);
-        l2 += i2;
+        method291(anIntArray437, -m282_i7, m282_l2 + mv_b, 0, anIntArray377, m282_j8, m282_k9);
+        m282_l2 += m282_i2;
       }
     }
-
   }
+
 
   private static void method283(int ai[], int ai1[], int i, int j, int k,
                                 int l, int i1, int j1, int k1, int l1, int i2, int j2, int k2,

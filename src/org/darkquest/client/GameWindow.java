@@ -238,6 +238,18 @@ public class GameWindow extends Applet implements Runnable {
     GameImage.loadFont("h24b", 7, this);
   }
 
+  
+  private int run_i; // = 0;
+  private int run_j; // = 256;
+  private int run_sleepTime; // = 1;
+  private int run_i1; // = 0;
+  private int run_k1;
+  private int run_i2;
+  private long run_l1;
+  private int run_k2;
+  private int run_j1;
+  private int run_j2;
+
   public final void run() {
     if (loadingScreen == 1) {
       loadingScreen = 2;
@@ -248,12 +260,13 @@ public class GameWindow extends Applet implements Runnable {
 
       loadingScreen = 0;
     }
-    int i = 0;
-    int j = 256;
-    int sleepTime = 1;
-    int i1 = 0;
-    for (int j1 = 0; j1 < 10; j1++)
-      currentTimeArray[j1] = System.currentTimeMillis();
+    run_i = 0;
+    run_j = 256;
+    run_sleepTime = 1;
+    run_i1 = 0;
+
+    for (run_j1 = 0; run_j1 < 10; run_j1++)
+      currentTimeArray[run_j1] = System.currentTimeMillis();
 
     while (exitTimeout >= 0) {
       if (exitTimeout > 0) {
@@ -264,47 +277,48 @@ public class GameWindow extends Applet implements Runnable {
           return;
         }
       }
-      int k1 = j;
-      int i2 = sleepTime;
-      j = 300;
-      sleepTime = 1;
-      long l1 = System.currentTimeMillis();
-      if (currentTimeArray[i] == 0L) {
-        j = k1;
-        sleepTime = i2;
-      } else if (l1 > currentTimeArray[i])
-        j = (int) ((long) (2560 * threadSleepModifier) / (l1 - currentTimeArray[i]));
-      if (j < 25)
-        j = 25;
-      if (j > 256) {
-        j = 256;
-        sleepTime = (int) ((long) threadSleepModifier - (l1 - currentTimeArray[i]) / 10L);
+      run_k1 = run_j;
+      run_i2 = run_sleepTime;
+      run_j = 300;
+      run_sleepTime = 1;
+
+      run_l1 = System.currentTimeMillis();
+      if (currentTimeArray[run_i] == 0L) {
+        run_j = run_k1;
+        run_sleepTime = run_i2;
+      } else if (run_l1 > currentTimeArray[run_i])
+        run_j = (int) ((long) (2560 * threadSleepModifier) / (run_l1 - currentTimeArray[run_i]));
+      if (run_j < 25)
+        run_j = 25;
+      if (run_j > 256) {
+        run_j = 256;
+        run_sleepTime = (int) ((long) threadSleepModifier - (run_l1 - currentTimeArray[run_i]) / 10L);
         try {
-          if(sleepTime > 60) sleepTime = 60;
-          Thread.sleep(sleepTime);
+          if(run_sleepTime > 60) run_sleepTime = 60;
+          Thread.sleep(run_sleepTime);
         } catch (InterruptedException _ex) {
-          if (sleepTime < threadSleepTime)
-            sleepTime = threadSleepTime;
+          if (run_sleepTime < threadSleepTime)
+            run_sleepTime = threadSleepTime;
         }
       }
       try {
-        Thread.sleep(sleepTime);
+        Thread.sleep(run_sleepTime);
       } catch (InterruptedException _ex) {
       }
-      currentTimeArray[i] = l1;
-      i = (i + 1) % 10;
-      if (sleepTime > 1) {
-        for (int j2 = 0; j2 < 10; j2++)
-          if (currentTimeArray[j2] != 0L)
-            currentTimeArray[j2] += sleepTime;
+      currentTimeArray[run_i] = run_l1;
+      run_i = (run_i + 1) % 10;
+      if (run_sleepTime > 1) {
+        for (run_j2 = 0; run_j2 < 10; run_j2++)
+          if (currentTimeArray[run_j2] != 0L)
+            currentTimeArray[run_j2] += run_sleepTime;
 
       }
-      int k2 = 0;
-      while (i1 < 256) {
+      run_k2 = 0;
+      while (run_i1 < 256) {
         method2();
-        i1 += j;
-        if (++k2 > anInt5) {
-          i1 = 0;
+        run_i1 += run_j;
+        if (++run_k2 > anInt5) {
+          run_i1 = 0;
           anInt10 += 6;
           if (anInt10 > 25) {
             anInt10 = 0;
@@ -314,7 +328,7 @@ public class GameWindow extends Applet implements Runnable {
         }
       }
       anInt10--;
-      i1 &= 0xff;
+      run_i1 &= 0xff;
       method4();
     }
     if (exitTimeout == -1)
