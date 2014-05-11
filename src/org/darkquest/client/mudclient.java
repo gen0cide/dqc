@@ -671,6 +671,7 @@ public final class mudclient extends GameWindowMiddleMan {
         currentUser = menuLogin.getText(loginUsernameTextBox);
         currentPass = menuLogin.getText(loginPasswordTextBox);
         login(currentUser, currentPass, false);
+
       }
     }
   }
@@ -1061,7 +1062,7 @@ public final class mudclient extends GameWindowMiddleMan {
 
   private final void loadConfigFilter() {
     drawDownloadProgress("Checking local data files", 1);
-    EntityHandler.load();
+    EntityHandler.load(true);
   }
 
   private final void loadModels() {
@@ -6162,6 +6163,12 @@ public final class mudclient extends GameWindowMiddleMan {
     super.friendsCount = 0;
 
     questionMenu.close();
+    loadConfigFilter();
+    loadMedia();
+    loadEntity();
+    loadTextures();
+    loadModels();
+    loadSounds();
   }
 
   private final void drawTradeWindow() {

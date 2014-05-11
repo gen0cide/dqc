@@ -3,6 +3,10 @@ package org.darkquest.client.util;
 import com.thoughtworks.xstream.XStream;
 
 import java.io.*;
+import java.io.File;
+import java.nio.channels.*;
+import java.net.URL;
+import java.net.URLConnection;
 import java.util.zip.GZIPInputStream;
 import java.util.zip.GZIPOutputStream;
 
@@ -31,6 +35,31 @@ public class PersistenceManager {
     } catch (ClassNotFoundException e) {
       e.printStackTrace();
     }
+  }
+
+  public static Object loadURL(String url) {
+    try {
+      URL link = new URL(url);
+      //ReadableByteChannel rbc = Channels.newChannel(link.openStream());
+      InputStream fis = null;
+      File tempFile = File.createTempFile("dqc-",".rscd");
+      FileOutputStream fos = new FileOutputStream(tempFile);
+      URLConnection urlConn = link.openConnection();
+      fis = urlConn.getInputStream();
+      byte[] buffer = new byte[4096];
+      int len;
+      while ((len = fis.read(buffer)) > 0) {
+        fos.write(buffer,0,len);
+      }
+
+      //fos.getChannel().transferFrom(rbc, 0, Long.MAX_VALUE);
+      InputStream is = new GZIPInputStream(new FileInputStream(tempFile));
+      Object rv = xstream.fromXML(is);
+      return rv;
+    } catch (IOException ioe) {
+      System.err.println(ioe.getMessage());
+    }
+    return null;
   }
 
   public static Object load(File file) {

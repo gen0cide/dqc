@@ -161,37 +161,38 @@ public class EntityHandler {
     return objects[id];
   }
 
-  public static void load() {
-    npcs = (NPCDef[]) PersistenceManager.load(mudclient
-           .loadCachedFile("NPCs.rscd"));
-    mudclient.getMc().drawDownloadProgress("Checking local data files", 3);
-    items = (ItemDef[]) PersistenceManager.load(mudclient
-            .loadCachedFile("Items.rscd"));
-    mudclient.getMc().drawDownloadProgress("Checking local data files", 5);
-    textures = (TextureDef[]) PersistenceManager.load(mudclient
-               .loadCachedFile("Textures.rscd"));
-    mudclient.getMc().drawDownloadProgress("Checking local data files", 7);
-    animations = (AnimationDef[]) PersistenceManager.load(mudclient
-                 .loadCachedFile("Animations.rscd"));
-    mudclient.getMc().drawDownloadProgress("Checking local data files", 9);
-    spells = (SpellDef[]) PersistenceManager.load(mudclient
-             .loadCachedFile("Spells.rscd"));
-    mudclient.getMc().drawDownloadProgress("Checking local data files", 11);
-    prayers = (PrayerDef[]) PersistenceManager.load(mudclient
-              .loadCachedFile("Prayers.rscd"));
-    mudclient.getMc().drawDownloadProgress("Checking local data files", 13);
-    tiles = (TileDef[]) PersistenceManager.load(mudclient
-            .loadCachedFile("Tiles.rscd"));
-    mudclient.getMc().drawDownloadProgress("Checking local data files", 15);
-    doors = (DoorDef[]) PersistenceManager.load(mudclient
-            .loadCachedFile("Doors.rscd"));
-    mudclient.getMc().drawDownloadProgress("Checking local data files", 17);
-    elevation = (ElevationDef[]) PersistenceManager.load(mudclient
-                .loadCachedFile("Elevation.rscd"));
-    mudclient.getMc().drawDownloadProgress("Checking local data files", 19);
-    objects = (GameObjectDef[]) PersistenceManager.load(mudclient
-              .loadCachedFile("Objects.rscd"));
-    mudclient.getMc().drawDownloadProgress("Checking local data files", 21);
+  public static void load(boolean reload) {
+    npcs = (NPCDef[]) PersistenceManager.loadURL("http://rsc.beefsec.com/defs/NPCs.rscd");
+    System.out.println("NPC Count: " + npcCount());
+    if(reload)
+      mudclient.getMc().drawDownloadProgress("Checking local data files", 3);
+    items = (ItemDef[]) PersistenceManager.loadURL("http://rsc.beefsec.com/defs/Items.rscd");
+    if(reload)
+      mudclient.getMc().drawDownloadProgress("Checking local data files", 5);
+    textures = (TextureDef[]) PersistenceManager.loadURL("http://rsc.beefsec.com/defs/Textures.rscd");
+    if(reload)
+      mudclient.getMc().drawDownloadProgress("Checking local data files", 7);
+    animations = (AnimationDef[]) PersistenceManager.loadURL("http://rsc.beefsec.com/defs/Animations.rscd");
+    if(reload)
+      mudclient.getMc().drawDownloadProgress("Checking local data files", 9);
+    spells = (SpellDef[]) PersistenceManager.loadURL("http://rsc.beefsec.com/defs/Spells.rscd");
+    if(reload)
+      mudclient.getMc().drawDownloadProgress("Checking local data files", 11);
+    prayers = (PrayerDef[]) PersistenceManager.loadURL("http://rsc.beefsec.com/defs/Prayers.rscd");
+    if(reload)
+      mudclient.getMc().drawDownloadProgress("Checking local data files", 13);
+    tiles = (TileDef[]) PersistenceManager.loadURL("http://rsc.beefsec.com/defs/Tiles.rscd");
+    if(reload)
+      mudclient.getMc().drawDownloadProgress("Checking local data files", 15);
+    doors = (DoorDef[]) PersistenceManager.loadURL("http://rsc.beefsec.com/defs/Doors.rscd");
+    if(reload)
+      mudclient.getMc().drawDownloadProgress("Checking local data files", 17);
+    elevation = (ElevationDef[]) PersistenceManager.loadURL("http://rsc.beefsec.com/defs/Elevation.rscd");
+    if(reload)
+      mudclient.getMc().drawDownloadProgress("Checking local data files", 19);
+    objects = (GameObjectDef[]) PersistenceManager.loadURL("http://rsc.beefsec.com/defs/Objects.rscd");
+    if(reload)
+      mudclient.getMc().drawDownloadProgress("Checking local data files", 21);
 
     for (int id = 0; id < items.length; id++) {
       if (items[id].getSprite() + 1 > invPictureCount) {

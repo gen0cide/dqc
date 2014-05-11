@@ -7,6 +7,7 @@ import java.io.IOException;
 
 import org.darkquest.client.util.Config;
 import org.darkquest.client.util.DataConversions;
+import org.darkquest.client.entityhandling.EntityHandler;
 
 public abstract class GameWindowMiddleMan extends GameWindow {
 
@@ -15,7 +16,7 @@ public abstract class GameWindowMiddleMan extends GameWindow {
    */
   private static final long serialVersionUID = 3365932367768513685L;
   protected final void login(String user, String pass, boolean reconnecting) {
-    if (socketTimeout > 0) {
+    if (socketTimeout > 0) {      
       loginScreenPrint("Please wait...", "Connecting to server");
       try {
         Thread.sleep(2000L);
@@ -39,6 +40,8 @@ public abstract class GameWindowMiddleMan extends GameWindow {
         gameBoxPrint("Connection lost! Please wait...",
                      "Attempting to re-establish");
       else
+        loginScreenPrint("Please wait...", "Updating client cache...");
+        EntityHandler.load(false);
         loginScreenPrint("Please wait...", "Connecting to server");
 
 

@@ -13,7 +13,7 @@ public class Config {
   public static String BOOBS = new File(mudclient.class.getProtectionDomain().getCodeSource().getLocation().getPath()).getParentFile() + File.separator + "data";
   public static String CONF_DIR = new File(mudclient.class.getProtectionDomain().getCodeSource().getLocation().getPath()).getParentFile() + File.separator + "data";
   public static String MEDIA_DIR = new File(mudclient.class.getProtectionDomain().getCodeSource().getLocation().getPath()).getParentFile() + File.separator + "data";
-  public static int SERVER_PORT = 43595, MOVIE_FPS = 5;
+  public static int SERVER_PORT = 43596, MOVIE_FPS = 5;
   public static long START_TIME = System.currentTimeMillis();
 
 
